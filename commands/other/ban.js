@@ -13,7 +13,8 @@ module.exports = class ban extends Command {
       args: [{
         type: "string", 
         prompt: "Who?", 
-        key: "user"
+        key: "user",
+        parse: u => u.toLowerCase()
       }, {
         type: "string", 
         prompt: "Reason?", 
@@ -24,14 +25,6 @@ module.exports = class ban extends Command {
   }
 
   async run(msg, { user, reason }){
-
-    let USER = msg.guild.members.cache.find(u => u.id === user || u.username === user || u.tag === user) || msg.mentions.members.first() || await this.client.users.fetch(user, true).catch(() => null)
-
-    let allMembers = await msg.guild.members.fetch()
-    console.log(allMembers)
-    
-
-    return
 
     if(!USER) return msg.say(`I couldn't find that user!`)
 
@@ -45,13 +38,13 @@ module.exports = class ban extends Command {
 
     await USER.send(`You have been banned from ${msg.guild.name}.\nRason: \`\`\`${reason}\`\`\``).catch(() => {})
 
-    // if(USER.user){
-    //   msg.guild.members.ban(USER.user.id, {reason})
-    // }else{
-    //   msg.guild.members.ban(USER.id, {reason})
-    // }
+    if(USER.user){
+      msg.guild.members.ban(USER.user.id, {reason})
+    }else{
+      msg.guild.members.ban(USER.id, {reason})
+    }
 
-    // msg.guild.members.ban(USER.user.id, {reason})
+    msg.guild.members.ban(USER.user.id, {reason})
 
     let logChannel = msg.guild.channels.cache.get(settings.punishmentLogs)
     
