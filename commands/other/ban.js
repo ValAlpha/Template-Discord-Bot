@@ -1,6 +1,5 @@
 const { Command, CommandDispatcher } = require("discord.js-commando")
 const { RichEmbed, MessageEmbed } = require("discord.js")
-const superagent = require("superagent")
 
 module.exports = class ban extends Command {
   constructor(client) { 
@@ -13,7 +12,8 @@ module.exports = class ban extends Command {
       args: [{
         type: "string", 
         prompt: "Who?", 
-        key: "user"
+        key: "user",
+        parse: u => u.toLowerCase()
       }, {
         type: "string", 
         prompt: "Reason?", 
@@ -25,13 +25,8 @@ module.exports = class ban extends Command {
 
   async run(msg, { user, reason }){
 
-    let USER = msg.guild.members.cache.find(u => u.id === user || u.username === user || u.tag === user) || msg.mentions.members.first() || await this.client.users.fetch(user, true).catch(() => null)
-
     let allMembers = await msg.guild.members.fetch()
-    console.log(allMembers)
-    
-
-    return
+    let USER = allMembers.find(u => u.user.id === user || u.user.username.toLowerCase() === user || u.user.tag.toLowerCase() === user) || msg.mentions.members.first() || await this.client.users.fetch(user, true).catch(() => null)
 
     if(!USER) return msg.say(`I couldn't find that user!`)
 
@@ -41,17 +36,22 @@ module.exports = class ban extends Command {
     if(USER.id === this.client.user.id) return msg.say(`Please don't ban me! 😢`)
     if(USER.user && USER.hasPermission('KICK_MEMBERS')) return msg.say('I can not ban this user')
 
+    // Check if already banned
+    const guildBans = await msg.guild.fetchBans()
+    let alreadyBanned = guildBans.find(u => u.user.id === user || u.user.username.toLowerCase() === user || u.user.tag.toLowerCase() === user) || msg.mentions.members.first() || await this.client.users.fetch(user, true).catch(() => null)
+
+    if(alreadyBanned) return msg.say(`This user is already banned`)
+
+
     const settings = await this.client.settings
 
     await USER.send(`You have been banned from ${msg.guild.name}.\nRason: \`\`\`${reason}\`\`\``).catch(() => {})
 
-    // if(USER.user){
-    //   msg.guild.members.ban(USER.user.id, {reason})
-    // }else{
-    //   msg.guild.members.ban(USER.id, {reason})
-    // }
-
-    // msg.guild.members.ban(USER.user.id, {reason})
+    if(USER.user){
+      msg.guild.members.ban(USER.user.id, {reason})
+    }else{
+      msg.guild.members.ban(USER.id, {reason})
+    }
 
     let logChannel = msg.guild.channels.cache.get(settings.punishmentLogs)
     
