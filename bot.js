@@ -46,7 +46,7 @@ client.registry
 .registerCommandsIn(join(__dirname, 'commands'));
 
 let folders = [
-    "owner",
+
 ];
 
 for (const folder of folders) {
