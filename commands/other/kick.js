@@ -33,7 +33,7 @@ module.exports = class kick extends Command {
 
     user.kick().catch(err => console.log(err))
 
-    return msg.say(`${user.user.username}#${user.user.discriminator} has been kicked!`)
+    return msg.say(`${user.user.username}#${user.user.discriminator} has been kicked`)
     
     
 
