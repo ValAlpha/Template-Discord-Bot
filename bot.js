@@ -34,6 +34,7 @@ client.registry
     .registerGroups([ 
         ['moderation', 'Moderation'],
         ['info', 'Info'],
+        ['fun', 'Fun'],
         ['other', 'Other']
     ])
     .registerDefaultGroups()
