@@ -4,7 +4,6 @@ const { MessageEmbed, WebhookClient, ClientUser } = require("discord.js")
 const { config } = require("dotenv")
 config()        
 
-
        const client = new CommandoClient({ 
         commandPrefix: '.',
         owner:"",
