@@ -11,8 +11,10 @@ module.exports = class purge extends Command {
       guildOnly: true, 
       args: [{
         type: "integer", 
-        prompt: "How many?\nMin: 1\nMax: 100", 
-        key: "amount"
+        prompt: "How many?\nMin: 2\nMax: 100", 
+        key: "amount", 
+        min: 2, 
+        max: 100
       }]
     })
   }
@@ -21,29 +23,27 @@ module.exports = class purge extends Command {
     if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.say(`You don't have permission to use this command`)
     if(!msg.guild.me.hasPermission('MANAGE_MESSAGES')) return msg.say(`I need the \`Manage Messages\` permission to do this!`)
 
-    msg.channel.bulkDelete(amount, true).then(msgs => {
-    
-      let ammountDeleted = msgs.size
-      msg.say(`Deleted ${ammountDeleted} messages`)
+    let msgs = await msg.channel.messages.fetch({ limit: amount })
+    let filtered = msgs.filter(m => !m.pinned)
+
+    msg.channel.bulkDelete(filtered, true).then(msgs => {
+
+      msg.say(`Bulk deleted ${msgs.size} messages!`)
 
       const settings = this.client.settings
-      if(!settings.messageLogs) return
-
+      if(settings.messageLogs){
         msg.guild.channels.cache.get(settings.messageLogs).send(new MessageEmbed()
         .setAuthor(this.client.user.username, this.client.user.displayAvatarURL({dynamic: true}))
         .setTitle(`Bulk Delete`)
         .setDescription(`
         Moderator: <@${msg.author.id}>
-        Number of messages deleted: ${ammountDeleted}
+        Number of messages deleted: ${msgs.size}
 
         Deleted in <#${msg.channel.id}>`)
         .setColor("RANDOM")
         .setTimestamp()).catch(() => {})
+      }
     }).catch(err => console.log(err))
-
-    
-
-
 
   } 
 }
