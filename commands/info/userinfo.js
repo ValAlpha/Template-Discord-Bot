@@ -9,7 +9,7 @@ module.exports = class userinfo extends Command {
     super(client, {
       name: "userinfo", 
       description: "View info on mentioned user", 
-      group: "other", 
+      group: "info", 
       memberName: "userinfo", 
       aliases: ["ui"], 
       guildOnly: true, 

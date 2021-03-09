@@ -6,7 +6,7 @@ module.exports = class purge extends Command {
     super(client, {
       name: "purge", 
       description: "Bulk delete up to 100 messages", 
-      group: "other", 
+      group: "moderation", 
       memberName: "purge", 
       guildOnly: true, 
       args: [{

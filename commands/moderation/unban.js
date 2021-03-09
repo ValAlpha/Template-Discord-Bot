@@ -6,7 +6,7 @@ module.exports = class unban extends Command {
     super(client, {
       name: "unban", 
       description: "Unban a user", 
-      group: "other", 
+      group: "moderation", 
       guildOnly: true, 
       memberName: "unban", 
       args: [{
