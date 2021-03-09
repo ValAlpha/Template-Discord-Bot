@@ -19,6 +19,7 @@
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "nodejs": "0.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "superagent": "^6.1.0"
   }
 }
