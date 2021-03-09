@@ -26,6 +26,4 @@ const messageDelete = (client => {
     .setTimestamp()).catch(err => console.log(err))
   })
 })
-
->>>>>>> d6770e679d72e479ce8d5c142ef388afded45623
 module.exports = messageDelete

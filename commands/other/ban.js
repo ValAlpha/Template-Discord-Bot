@@ -69,6 +69,4 @@ module.exports = class ban extends Command {
     if(logChannel) logChannel.send(embed).catch(err => console.log(err))
     msg.say(`${USER.user ? `${USER.user.tag}` : `${USER.tag}`} has been banned`)
   }
-
->>>>>>> d6770e679d72e479ce8d5c142ef388afded45623
 }
