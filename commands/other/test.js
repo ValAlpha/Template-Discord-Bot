@@ -12,7 +12,9 @@ module.exports = class test extends Command {
       group: "other", 
     })
   }
-  async run(msg, { user }) {
+  async run(msg) {
+
+    
 
   }
 }

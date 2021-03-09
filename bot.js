@@ -54,6 +54,11 @@ for (const folder of folders) {
 global.servers = {};
 
 client.settings = require("./settings.json")
+client.events = {
+    messageDelete: require("./events/messageDelete"), 
+    messageUpdate: require("./events/messageUpdate")
+}
+
 
 client.once('ready', async () => {
 
@@ -66,6 +71,9 @@ client.once('ready', async () => {
         }
     })
 })
+
+// client.events.messageDelete(client)
+client.events.messageUpdate(client)
 
 client.on("commandError", (cmd, error, msg, args, fromPatter, result) => {
     console.log(`${cmd.name} - (Error)`, error.stack)
