@@ -80,9 +80,14 @@ client.once('ready', async () => {
 
 // client.events.messageDelete(client)
 client.events.messageUpdate(client)
+client.utils = {
+    antiAd: require("./utils/antiAdvertisement")
+}
 
-
-if(client.settings.antiAdvertisement == true) client.utils.antiAd(client)
+client.on('message', async (msg) => {
+    if(client.settings.antiAdvertisement.enabled) require("./utils/antiAdvertisement")(client, msg)
+    if(client.settings.wordFilter.enabled) require("./utils/wordFilter")(client, msg)
+})
 
 client.on("commandError", (cmd, error, msg, args, fromPatter, result) => {
     console.log(`${cmd.name} - (Error)`, error.stack)

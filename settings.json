@@ -1,8 +1,20 @@
 {
  "punishmentLogs": "816624856757698610", 
+ 
  "reportLogs": "818070399991808010", 
+ 
  "messageLogs": "818151462349176843",
+ 
  "warnLogs": "818942502672924672",
+ 
  "giphyApiKey": "W19hGX7nEc63ezGHbco83pAExRFpizVA", 
- "antiAdvertisement": true
+ 
+ "antiAdvertisement": {
+   "enabled": true
+ },
+
+ "wordFilter": {
+   "enabled": true, 
+   "filterList": ["nigger", "fuck", "shit", "cunt"]
+ }
 }

@@ -1,6 +1,4 @@
-const antiAd = async client => {
-
-  client.on('message', async msg => {
+const antiAd = async (client, msg) => {
 
     if(!msg.content.includes('discord.gg/')) return
 
@@ -15,7 +13,6 @@ const antiAd = async client => {
         msg.reply(`please do not advritise other Discord servers here!`)
       }
     }
-  })
 }
 
 module.exports = antiAd
