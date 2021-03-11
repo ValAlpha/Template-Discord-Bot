@@ -2,6 +2,7 @@ const { CommandoClient } = require("discord.js-commando")
 const { join } = require("path") 
 const { MessageEmbed, WebhookClient, ClientUser } = require("discord.js")
 const { config } = require("dotenv")
+const { settings } = require("cluster")
 config()        
 
        const client = new CommandoClient({ 
@@ -60,6 +61,9 @@ client.events = {
     messageDelete: require("./events/messageDelete"), 
     messageUpdate: require("./events/messageUpdate")
 }
+client.utils = {
+    antiAd: require("./utils/antiAdvertisement")
+}
 
 
 client.once('ready', async () => {
@@ -76,6 +80,9 @@ client.once('ready', async () => {
 
 // client.events.messageDelete(client)
 client.events.messageUpdate(client)
+
+
+if(client.settings.antiAdvertisement == true) client.utils.antiAd(client)
 
 client.on("commandError", (cmd, error, msg, args, fromPatter, result) => {
     console.log(`${cmd.name} - (Error)`, error.stack)
