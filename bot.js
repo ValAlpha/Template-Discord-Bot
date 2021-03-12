@@ -56,6 +56,13 @@ for (const folder of folders) {
 
 global.servers = {};
 
+const connectToDatabase = require("./database/mongodb")
+connectToDatabase()
+
+client.dbs  = {
+    warnings: require("./database/models/warnings")
+}
+
 client.settings = require("./settings.json")
 client.events = {
     messageDelete: require("./events/messageDelete"), 
