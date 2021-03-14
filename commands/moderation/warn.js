@@ -37,13 +37,15 @@ module.exports = class warn extends Command {
     if(!warns){
       new this.client.dbs.warnings({
         dbID: msg.guild.id, 
-        warnings: [{ caseID: 1, user: user.id, reason, moderator: msg.author.id }]
+        warnings: [{ caseID: 1, user: user.id, reason, moderator: msg.author.id }], 
+        warnCount: 1
       }).save().catch(err => console.log(err))
 
       msg.say(`User has been warned`).catch(() => {})
     }else{
 
-      warns.warnings.push({ caseID: (warns.warnings.length + 1), user: user.id, reason, moderator: msg.author.id })
+      warns.warnings.push({ caseID: (warns.warnCount + 1), user: user.id, reason, moderator: msg.author.id })
+      warns.warnCount++
       warns.save().catch(err => console.log(err))
 
       msg.say(`User has been warned`).catch(() => {})
