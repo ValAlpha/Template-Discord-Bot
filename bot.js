@@ -46,9 +46,7 @@ client.registry
 
 .registerCommandsIn(join(__dirname, 'commands'));
 
-let folders = [
-
-];
+let folders = []
 
 for (const folder of folders) {
     client.registry.registerCommandsIn(join(__dirname, `commands/${folder}/`));
