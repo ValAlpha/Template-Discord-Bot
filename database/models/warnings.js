@@ -3,9 +3,7 @@ const mongoose = require("mongoose")
 const warnings = new mongoose.Schema({
 
   dbID: {type: String, default: ""},
-  users: {type: Array, default: []},
-  warningCount: {type: Number, default: 0}
-
+  warnings: {type: Array, default: []}
 })
 
 module.exports = mongoose.model('warnings', warnings)
