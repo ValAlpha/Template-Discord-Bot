@@ -29,7 +29,7 @@ module.exports = class warn extends Command {
     if(user.id === this.client.user.id) return msg.say(`Please don't warn me!`)
     if(user.bot) return msg.say(`You can not warn bots`)
 
-    const settings = require("../../settings.json")
+    const settings = this.client.settings
     const warnLogs = settings.warnLogs
 
     const warns = await this.client.dbs.warnings.findOne({dbID: msg.guild.id})
