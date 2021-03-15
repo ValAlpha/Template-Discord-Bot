@@ -1,0 +1,47 @@
+{
+  "punishmentLogs": {
+    "enabled": true, 
+    "channelID": ""
+  }, 
+  "reportLogs": {
+    "enabled": true, 
+    "channelID": ""
+  }, 
+  "messageLogs": {
+    "enabled": true, 
+    "channelID": ""
+  },
+  
+  "warnLogs": {
+    "enabled": true, 
+    "channelID": ""
+  },
+
+  "suggestions": {
+    "enabled": true, 
+    "channelID": ""
+  },
+
+  "inviteManager": {
+    "enabled": true,
+    "channelID": ""
+  },
+
+  "joinLeaveLog": {
+    "enabled": true, 
+    "joinMessage": "Welcome @user to @guildName!", 
+    "leaveMessage": "Goodbye @user!", 
+    "channelID": ""
+  },
+  
+  "giphyApiKey": "", 
+  
+  "antiAdvertisement": {
+    "enabled": true
+  },
+  
+  "wordFilter": {
+    "enabled": true, 
+    "filterList": ["word_to_block", "phrase to block"]
+  }
+ }
