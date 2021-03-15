@@ -67,7 +67,7 @@ This is perfect for those who are new to creating Discord bots.
 10. Ensure the `Driver` is `node.js` and the `version` is `3.6 or later`
 11. Copy the connection string. It will look something like this: <br>
 `mongodb+srv://TemplateBot:<password>@cluster0.pf4nz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-12. Inside our code editor create a file called `.env` and inside type the following: 
+12. Inside our code editor create a file inside the root of the project called `.env` and inside type the following: 
 `MongoDB=""`
 Inside of the quotes paste your connection srting
 **Replacing `<password>` with your database user password** and changing `myFirstDatabase` to something more appropriate
