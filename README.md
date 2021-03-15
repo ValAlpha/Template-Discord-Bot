@@ -1,4 +1,3 @@
-
 # Discord Bot Template built with JavaScript
 
 ## What is this project?
@@ -48,8 +47,8 @@ This is perfect for those who are new to creating Discord bots.
 - A basic understanding of JavaScript is fundamental
 - A basic understanding of [Discord.js](https://www.npmjs.com/package/discord.js) and [Discord.commando](https://www.npmjs.com/package/discord.js-commando) is ideal but not necessary
 - A basic understanding of [MongoDB](mongodb.com) and [Mongoose](https://www.npmjs.com/package/mongoose) is ideal but not necessary
-
 ---
+
 ## Creating a MongoDB account
 
  1. Go to [MongoDB](https://account.mongodb.com/account/register)
@@ -71,3 +70,33 @@ This is perfect for those who are new to creating Discord bots.
 `MongoDB=""`
 Inside of the quotes paste your connection srting
 **Replacing `<password>` with your database user password** and changing `myFirstDatabase` to something more appropriate
+---
+## Creating a Discord bot client
+1.  Go to the [Discord dev portal](discord.com/developers/applications)
+2. Click `New Application` on the top-right
+3. Give it a name and click `Create`
+4. On the left-hand side click `bot` and click `add bot`
+This tells Discord you want this account to be a `bot account`
+5. Under `Privileged Gateway Intents` ensure `SERVER MEMBERS INTENT` is enabled. Please note, Once your bot surpasses 100 servers your bot will need to be [verified]() in order to use this intent.
+6. On the left-hand side click `OAuth2` and under `scopes` check `bot`
+7. Under `bot permissions` check the following:
+- View Audit Log
+- Manage Server
+- Manage Roles
+- Manage Channels
+- Kick Members
+- Ban Members
+- View Channels
+- Send Messages
+- Manage Messages
+- Embed Links
+- Read Message History
+- Add Reactions
+
+Alternatively just check the `Admin` permission **`Not Recommended`**
+
+8. Under `Scopes` an invite url has been generated with the required scopes.
+Use this to invite the bot to your guild. 
+9 On the left-hand side click `bot` and copy the `TOKEN`
+It is important that you keep this secret. NEVER share this with anyone you do no trust.
+---
