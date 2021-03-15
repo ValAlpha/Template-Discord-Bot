@@ -25,7 +25,8 @@ config()
                 "GUILDS",
                 "DIRECT_MESSAGES",
                 "DIRECT_MESSAGE_REACTIONS",
-                "GUILD_MESSAGE_REACTIONS"
+                "GUILD_MESSAGE_REACTIONS",
+                "GUILD_INVITES", 
             ]
         }
     });
@@ -64,7 +65,9 @@ client.dbs  = {
 client.settings = require("./settings.json")
 client.events = {
     messageDelete: require("./events/messageDelete"), 
-    messageUpdate: require("./events/messageUpdate")
+    messageUpdate: require("./events/messageUpdate"),
+    inviteManager: require("./events/inviteManager"), 
+    joinLeave: require("./events/joinLeave")
 }
 client.utils = {
     antiAd: require("./utils/antiAdvertisement")
@@ -85,14 +88,15 @@ client.once('ready', async () => {
 
 // client.events.messageDelete(client)
 client.events.messageUpdate(client)
-client.utils = {
-    antiAd: require("./utils/antiAdvertisement")
-}
+client.events.inviteManager(client)
+client.events.joinLeave(client)
 
 client.on('message', async (msg) => {
     if(client.settings.antiAdvertisement.enabled) require("./utils/antiAdvertisement")(client, msg)
     if(client.settings.wordFilter.enabled) require("./utils/wordFilter")(client, msg)
 })
+
+
 
 client.on("commandError", (cmd, error, msg, args, fromPatter, result) => {
     console.log(`${cmd.name} - (Error)`, error.stack)

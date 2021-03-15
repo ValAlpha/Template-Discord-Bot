@@ -2,3 +2,4 @@ node_modules
 package-lock.json
 .env
 settings.json
+commands/other/test.js
