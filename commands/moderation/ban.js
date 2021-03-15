@@ -38,10 +38,9 @@ module.exports = class ban extends Command {
 
     // Check if already banned
     const guildBans = await msg.guild.fetchBans()
-    let alreadyBanned = guildBans.find(u => u.user.id === user || u.user.username.toLowerCase() === user || u.user.tag.toLowerCase() === user) || msg.mentions.members.first() || await this.client.users.fetch(user, true).catch(() => null)
+    let alreadyBanned = guildBans.find(u => u.user.id === user || u.user.username.toLowerCase() === user || u.user.tag.toLowerCase() === user)
 
     if(alreadyBanned) return msg.say(`This user is already banned`)
-
 
     const settings = await this.client.settings
 
@@ -52,8 +51,6 @@ module.exports = class ban extends Command {
     }else{
       msg.guild.members.ban(USER.id, {reason})
     }
-
-    let logChannel = msg.guild.channels.cache.get(settings.punishmentLogs)
     
     let embed = new MessageEmbed()
     .setAuthor(this.client.user.username, this.client.user.displayAvatarURL({dynamic: true}))
@@ -66,7 +63,9 @@ module.exports = class ban extends Command {
     Reason: \`\`\`${reason}\`\`\``)
     .setTimestamp()
 
-    if(logChannel) logChannel.send(embed).catch(err => console.log(err))
+    if(settings.punishmentLogs.enabled && settings.punishmentLogs.channelID){
+      msg.guild.channels.cache.get(settings.punishmentLogs.channelID).send(embed).catch(err => console.log(err))
+    }
     msg.say(`${USER.user ? `${USER.user.tag}` : `${USER.tag}`} has been banned`)
   }
 }

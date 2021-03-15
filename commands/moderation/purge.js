@@ -31,8 +31,8 @@ module.exports = class purge extends Command {
       msg.say(`Bulk deleted ${msgs.size} messages!`)
 
       const settings = this.client.settings
-      if(settings.messageLogs){
-        msg.guild.channels.cache.get(settings.messageLogs).send(new MessageEmbed()
+      if(settings.messageLogs.enabled && settings.messageLogs.channelID){
+        msg.guild.channels.cache.get(settings.messageLogs.channelID).send(new MessageEmbed()
         .setAuthor(this.client.user.username, this.client.user.displayAvatarURL({dynamic: true}))
         .setTitle(`Bulk Delete`)
         .setDescription(`

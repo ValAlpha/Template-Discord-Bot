@@ -6,7 +6,7 @@ const messageDelete = (client => {
     if(msg.author.bot) return
 
     const settings = client.settings
-    if(!settings.messageLogs) return
+    if(!settings.messageLogs.enabled) return
 
     let oldContent = msg.content
     let newContent = msg.reactions.message.content

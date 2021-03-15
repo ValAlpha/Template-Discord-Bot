@@ -33,7 +33,6 @@ module.exports = class unban extends Command {
     msg.guild.members.unban(USER.user.id, {reason}).catch(err => console.log(err))
     
     const settings = await this.client.settings
-    let logChannel = msg.guild.channels.cache.get(settings.punishmentLogs)
 
     let embed = new MessageEmbed()
     .setAuthor(this.client.user.username, this.client.user.displayAvatarURL({dynamic: true}))
@@ -46,7 +45,9 @@ module.exports = class unban extends Command {
     \`\`\`${reason}\`\`\``)
     .setTimestamp()
 
-    if(logChannel) logChannel.send(embed).catch(err => console.log(err))
+    if(settings.punishmentLogs.enabled && settings.punishmentLogs.channelID){
+      msg.guild.channels.cache.get(settings.punishmentLogs.channelID).send(embed).catch(err => console.log(err))
+    }
     
     msg.say(`${USER.user.tag} has been unbanned!`)
 

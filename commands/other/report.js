@@ -24,11 +24,10 @@ module.exports = class report extends Command {
   async run(msg, { user, reason }){
 
     const settings = await this.client.settings
-    if(!settings.reportLogs) return msg.say(`This feature isn't enabled`)
+    let logChannel = msg.guild.channels.cache.get(settings.reportLogs.channelID)
 
-    let logChannel = msg.guild.channels.cache.get(settings.reportLogs)
+    if(!settings.reportLogs.enabled || !settings.reportLogs.channelID) return msg.say(`This feature isn't enabled`)
 
-    // Ensure the bot has the `MANAGE MESSAGES` permission
     setTimeout(() => msg.delete().catch(() => {}), 2000)
 
     msg.author.send(`Your report has been sent to the server moderators`).catch(err => console.log(err))
