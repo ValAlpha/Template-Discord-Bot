@@ -1,8 +1,6 @@
 const { CommandoClient } = require("discord.js-commando")
 const { join } = require("path") 
-const { MessageEmbed, WebhookClient, ClientUser } = require("discord.js")
 const { config } = require("dotenv")
-const { settings } = require("cluster")
 config()        
 
        const client = new CommandoClient({ 
