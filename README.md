@@ -1,4 +1,4 @@
-
+[![Hits](http://hits.dwyl.com/ValAlpha/TemplateBot.svg)](http://hits.dwyl.com/ValAlpha/TemplateBot)
 
 # Discord Bot Template built with JavaScript
 
