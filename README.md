@@ -1,3 +1,5 @@
+
+
 # Discord Bot Template built with JavaScript
 
 ## What is this project?
@@ -6,7 +8,7 @@ This is perfect for those who are new to creating Discord bots.
 
 ## What is included?
 ### Commands
- - [ ] Moderation
+### Moderation
  - Announce
  - Ban
  - Clear Warns
@@ -18,16 +20,16 @@ This is perfect for those who are new to creating Discord bots.
  - Warn
  - Warns
 
-- [ ] Info
+### Info
 - Server Info
 - User Info
 
-- [ ] Fun
+### Fun
 - Advice 
 - Chuck Norris
 - gif
 
-- [ ] Other
+### Other
 - Report
 - Suggest
 
@@ -97,6 +99,22 @@ Alternatively just check the `Admin` permission **`Not Recommended`**
 
 8. Under `Scopes` an invite url has been generated with the required scopes.
 Use this to invite the bot to your guild. 
-9 On the left-hand side click `bot` and copy the `TOKEN`
+9. On the left-hand side click `bot` and copy the `TOKEN`
 It is important that you keep this secret. NEVER share this with anyone you do no trust.
+10. Inside the `.env` file we created in `Step 12` under your MONGODB connection string add `TOKEN=`
+Please note, we do not use quotes  `""` for here.
+11. Paste your bot token after the `=` and save.
 ---
+## Getting the bot online
+1. Assuming you have followed all steps above we are ready to bring the bot to life.
+2. Open up your terminal inside of your code editor and type `npm install`. 
+This will install all packages from `package.json`
+3. Once this is done type `nodemon bot.js` and boom, It's alive!
+---
+## What if I have an issue?
+
+You can reach me (VAL#0001) on my [Discord Server](https://discord.gg/RswMYNwp9c)
+
+## How do I host/keep the bot online 24/7
+There are plenty of tutorials on YouTube for this.
+You are welcome to contact me for help and I will guide you through it but I will not explain it here.
