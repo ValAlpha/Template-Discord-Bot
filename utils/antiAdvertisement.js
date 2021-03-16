@@ -10,7 +10,7 @@ const antiAd = async (client, msg) => {
     for (const invite of invites) {
       if(!msg.content.includes(invite)){
         setTimeout(() => msg.delete().catch(() => {}), 1000)
-        msg.reply(`please do not advritise other Discord servers here!`)
+        return msg.reply(`please do not advritise other Discord servers here!`)
       }
     }
 }
