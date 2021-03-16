@@ -3,6 +3,9 @@
 <img alt="Discord" src="https://img.shields.io/discord/695521627085209640"> 
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/ValAlpha/TemplateBot">
 <br>
+<a href="https://lgtm.com/projects/g/ValAlpha/TemplateBot/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/ValAlpha/TemplateBot.svg?logo=lgtm&logoWidth=18"/></a>
+<a href="https://lgtm.com/projects/g/ValAlpha/TemplateBot/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/ValAlpha/TemplateBot.svg?logo=lgtm&logoWidth=18"/></a>
+<br>
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/TemplateBot?style=social"> 
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/ValAlpha/TemplateBot?style=social"> 
 
