@@ -1,6 +1,6 @@
 [![Hits](http://hits.dwyl.com/ValAlpha/TemplateBot.svg)](http://hits.dwyl.com/ValAlpha/TemplateBot)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-[![GitHub forks](https://img.shields.io/github/forks/ValAlpha/TemplateBot.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/ValAlpha/TemplateBot)
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/TemplateBot?style=social">
 
 # Discord Bot Template built with JavaScript
 
