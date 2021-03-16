@@ -37,7 +37,8 @@ client.registry
         ['moderation', 'Moderation'],
         ['info', 'Info'],
         ['fun', 'Fun'],
-        ['other', 'Other']
+        ['other', 'Other'],
+        ['customCommands', 'customCommands']
     ])
     .registerDefaultGroups()
     .registerDefaultCommands({
