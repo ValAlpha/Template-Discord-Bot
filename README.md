@@ -1,8 +1,9 @@
-[![Hits](http://hits.dwyl.com/ValAlpha/TemplateBot.svg)](http://hits.dwyl.com/ValAlpha/TemplateBot)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/TemplateBot?style=social">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/ValAlpha/TemplateBot?style=social">
-<img alt="Discord" src="https://img.shields.io/discord/695521627085209640">
+[![Hits](http://hits.dwyl.com/ValAlpha/TemplateBot.svg)](http://hits.dwyl.com/ValAlpha/TemplateBot) 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) 
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/TemplateBot?style=social"> 
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/ValAlpha/TemplateBot?style=social"> 
+<img alt="Discord" src="https://img.shields.io/discord/695521627085209640"> 
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/ValAlpha/TemplateBot"> 
 
 # Discord Bot Template built with JavaScript
 
