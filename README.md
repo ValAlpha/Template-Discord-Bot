@@ -124,6 +124,6 @@ This will install all packages from `package.json`
 
 You can reach me (VAL#0001) on my [Discord Server](https://discord.gg/RswMYNwp9c)
 
-## How do I host/keep the bot online 24/7
+## How do I host/keep the bot online 24/7?
 There are plenty of tutorials on YouTube for this.
 You are welcome to contact me for help and I will guide you through it but I will not explain it here.
