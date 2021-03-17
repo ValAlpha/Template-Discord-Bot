@@ -71,7 +71,6 @@ client.utils = {
     antiAd: require("./utils/antiAdvertisement")
 }
 
-
 client.once('ready', async () => {
 
   console.log(`Client | (Connected)`)
