@@ -1,5 +1,5 @@
-const { Command, CommandDispatcher } = require("discord.js-commando")
-const { RichEmbed, MessageEmbed } = require("discord.js")
+const { Command } = require("discord.js-commando")
+const { MessageEmbed } = require("discord.js")
 
 module.exports = class ban extends Command {
   constructor(client) { 

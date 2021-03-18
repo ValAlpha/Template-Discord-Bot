@@ -7,7 +7,7 @@ const connectDB = async () => {
     useFindAndModify: true,
     useUnifiedTopology: true
 })
-    .then(() => console.log(`[Mongodb] | (Connected)`))
+    .then(() => console.log(`[Mongodb] > (Connected)`))
     .catch((err) => {
         console.log(`Mongodb | (Error)\n`, err.stack);
     })

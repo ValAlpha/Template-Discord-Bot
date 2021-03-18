@@ -1,8 +1,6 @@
 const { CommandoClient } = require("discord.js-commando")
 const { join } = require("path") 
-const { MessageEmbed, WebhookClient, ClientUser } = require("discord.js")
 const { config } = require("dotenv")
-const { settings } = require("cluster")
 config()        
 
        const client = new CommandoClient({ 
@@ -37,8 +35,7 @@ client.registry
         ['moderation', 'Moderation'],
         ['info', 'Info'],
         ['fun', 'Fun'],
-        ['other', 'Other'],
-        ['customCommands', 'customCommands']
+        ['other', 'Other']
     ])
     .registerDefaultGroups()
     .registerDefaultCommands({
@@ -73,7 +70,6 @@ client.events = {
 client.utils = {
     antiAd: require("./utils/antiAdvertisement")
 }
-
 
 client.once('ready', async () => {
 
