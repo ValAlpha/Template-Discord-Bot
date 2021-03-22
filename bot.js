@@ -58,7 +58,12 @@ const connectToDatabase = require("./database/mongodb")
 connectToDatabase()
 
 client.dbs  = {
-    warnings: require("./database/models/warnings")
+    warnings: require("./database/models/warnings"), 
+    profile: require("./database/models/economyProfile")
+}
+
+client.functions = {
+    newEcoProfile: require("./functions/newEcoProfile")
 }
 
 client.settings = require("./settings.json")
