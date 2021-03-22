@@ -1,13 +1,13 @@
-[![Hits](http://hits.dwyl.com/ValAlpha/TemplateBot.svg)](http://hits.dwyl.com/ValAlpha/TemplateBot) 
+[![HitCount](http://hits.dwyl.com/ValAlpha/Template-Discord-Bot.svg)](http://hits.dwyl.com/ValAlpha/Template-Discord-Bot)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) 
 <img alt="Discord" src="https://img.shields.io/discord/695521627085209640"> 
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/ValAlpha/TemplateBot">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/ValAlpha/Template-Discord-Bot">
 <br>
-<a href="https://lgtm.com/projects/g/ValAlpha/TemplateBot/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/ValAlpha/TemplateBot.svg?logo=lgtm&logoWidth=18"/></a>
-<a href="https://lgtm.com/projects/g/ValAlpha/TemplateBot/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/ValAlpha/TemplateBot.svg?logo=lgtm&logoWidth=18"/></a>
+<a href="https://lgtm.com/projects/g/ValAlpha/Template-Discord-Bot/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/ValAlpha/Template-Discord-Bot.svg?logo=lgtm&logoWidth=18"/></a>
+<a href="https://lgtm.com/projects/g/ValAlpha/Template-Discord-Bot/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/ValAlpha/Template-Discord-Bot.svg?logo=lgtm&logoWidth=18"/></a>
 <br>
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/TemplateBot?style=social"> 
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/ValAlpha/TemplateBot?style=social"> 
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ValAlpha/Template-Discord-Bot?style=social"> 
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/ValAlpha/Template-Discord-Bot?style=social"> 
 
 # Discord Bot Template built with JavaScript
 
