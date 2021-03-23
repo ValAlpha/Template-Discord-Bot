@@ -7,8 +7,6 @@ const newProfile = async (client, user, msg) => {
       userID: user.id,
       balance: starterBalance
     }).save().catch(err => console.log(err))
-
-    return
 }
 
 module.exports = newProfile
