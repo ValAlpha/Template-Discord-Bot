@@ -19,15 +19,19 @@ module.exports = class balance extends Command {
     
     const profile = await this.client.dbs.profile.findOne({ userID: msg.author.id })
 
+    let embed = new MessageEmbed()
+    .setAuthor(msg.author.username, msg.author.displayAvatarURL({ dynaic: true }))
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(this.client.user.username, this.client.user.displayAvatarURL({dynaic: true}))
+
     if(!profile){
-      this.client.functions.newEcoProfile(this.client, msg.author, msg)
+      this.client.functions.newEcoProfile(this.client, msg.author, msg).then(res => console.log(res))
+      embed.setTitle(`Your balance is: ${economyConfig.starterBalance} ${economyConfig.currencyName}`)
+      return msg.say(embed)
     }else{
-      return msg.say(new MessageEmbed()
-      .setAuthor(msg.author.username, msg.author.displayAvatarURL({ dynaic: true }))
-      .setTitle(`Your balance is: ${profile.balance} ${economyConfig.currencyName}`)
-      .setColor("RANDOM")
-      .setTimestamp()
-      .setFooter(this.client.user.username, this.client.user.displayAvatarURL({dynaic: true})))
+      embed.setTitle(`Your balance is: ${profile.balance} ${economyConfig.currencyName}`)
+      return msg.say(embed)
     }
 
   }
