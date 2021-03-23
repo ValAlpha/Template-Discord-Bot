@@ -26,7 +26,7 @@ module.exports = class balance extends Command {
     .setFooter(this.client.user.username, this.client.user.displayAvatarURL({dynaic: true}))
 
     if(!profile){
-      this.client.functions.newEcoProfile(this.client, msg.author, msg)
+      this.client.functions.newEcoProfile(this.client, msg.author)
       embed.setTitle(`Your balance is: ${economyConfig.starterBalance} ${economyConfig.currencyName}`)
       return msg.say(embed)
     }else{
