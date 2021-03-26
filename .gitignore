@@ -3,3 +3,4 @@ package-lock.json
 .env
 settings.json
 commands/other/test.js
+example_settings.json

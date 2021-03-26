@@ -1,6 +1,7 @@
 const { CommandoClient } = require("discord.js-commando")
 const { join } = require("path") 
 const { config } = require("dotenv")
+const chalk = require("chalk")
 config()        
 
        const client = new CommandoClient({ 
@@ -79,7 +80,8 @@ client.utils = {
 
 client.once('ready', async () => {
 
-  console.log(`Client | (Connected)`)
+  console.log(`${chalk.magenta(`[CLIENT]`)} - ${chalk.cyan(`Connected`)}`)
+  console.log(chalk.red(`READ THE README.md`))
   
     client.user.setPresence({
         activity: {
