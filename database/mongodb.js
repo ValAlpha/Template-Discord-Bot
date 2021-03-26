@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const chalk = require("chalk")
 
 const connectDB = async () => {
   mongoose.connect(process.env.MONGODB, {
@@ -7,7 +8,7 @@ const connectDB = async () => {
     useFindAndModify: true,
     useUnifiedTopology: true
 })
-    .then(() => console.log(`[Mongodb] > (Connected)`))
+    .then(console.log(`${chalk.magenta(`[MONGODB]`)} - ${chalk.cyan(`Connected`)}`))
     .catch((err) => {
         console.log(`Mongodb | (Error)\n`, err.stack);
     })
